@@ -1,0 +1,349 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Cinzel:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+@theme {
+  --font-serif:   "Cormorant Garamond", serif;
+  --font-cursive: "Great Vibes", cursive;
+  --font-cinzel:  "Cinzel", serif;
+  --font-sans:    "DM Sans", sans-serif;
+
+  --color-kraft:    #B5813A;
+  --color-ivory:    #F5F0E8;
+  --color-bronze:   #8B5E2A;
+  --color-gold:     #C49A4A;
+  --color-espresso: #3D2610;
+  --color-taupe:    #A08060;
+  --color-beige:    #D4C4A8;
+  --color-cream:    #FAF6EE;
+}
+
+@theme {
+  --font-serif:   "Cormorant Garamond", serif;
+  --font-cursive: "Great Vibes", cursive;
+  --font-cinzel:  "Cinzel", serif;
+  --font-sans:    "DM Sans", sans-serif;
+
+  /* ── Primary palette ── */
+  --color-kraft:    #B5813A;
+  --color-ivory:    #F5F0E8;
+  --color-bronze:   #8B5E2A;
+  --color-gold:     #C49A4A;
+  --color-espresso: #3D2610;
+  --color-taupe:    #A08060;
+  --color-beige:    #D4C4A8;
+  --color-cream:    #FAF6EE;
+
+  /* ── Supporting accents ── */
+  --color-lavender:     #E8E0F0;
+  --color-lavender-mid: #C9B8E8;
+  --color-silver:       #F0EEF5;
+  --color-white-base:   #FFFFFF;
+}
+
+/* ────────────────────────────────────────────
+   CSS CUSTOM PROPERTIES (runtime access)
+──────────────────────────────────────────── */
+:root {
+  --color-kraft:        #B5813A;
+  --color-ivory:        #F5F0E8;
+  --color-bronze:       #8B5E2A;
+  --color-gold:         #C49A4A;
+  --color-espresso:     #3D2610;
+  --color-taupe:        #A08060;
+  --color-beige:        #D4C4A8;
+  --color-cream:        #FAF6EE;
+  --color-lavender:     #E8E0F0;
+  --color-lavender-mid: #C9B8E8;
+  --color-silver:       #F0EEF5;
+  --color-white-base:   #FFFFFF;
+}
+
+/* ────────────────────────────────────────────
+   BASE
+──────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    color: var(--color-bronze);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    letter-spacing: 0.02em;
+    color: var(--color-espresso);
+  }
+}
+
+/* ────────────────────────────────────────────
+   GOLD BORDER UTILITY
+──────────────────────────────────────────── */
+.gold-border {
+  border: 1px solid rgba(196, 154, 74, 0.45);
+  position: relative;
+}
+
+.gold-border::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(196, 154, 74, 0.18);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ────────────────────────────────────────────
+   GOLD GRADIENT TEXT
+──────────────────────────────────────────── */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #8B5E2A 0%, #C49A4A 50%, #D4C4A8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ────────────────────────────────────────────
+   GOLD GRADIENT BACKGROUND
+──────────────────────────────────────────── */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #B5813A 0%, #C49A4A 60%, #D4C4A8 100%);
+}
+
+/* ────────────────────────────────────────────
+   GLASSMORPHISM CARD
+──────────────────────────────────────────── */
+.glass-card {
+  background: rgba(245, 240, 232, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-beige);
+  box-shadow:
+    0 8px 40px rgba(160, 128, 96, 0.12),
+    0 2px 12px rgba(160, 128, 96, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* ────────────────────────────────────────────
+   SUBTLE DIAGONAL TEXTURE (replaces kerala-kasavu-pattern)
+──────────────────────────────────────────── */
+.kasavu-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(196, 154, 74, 0.04) 0px,
+    rgba(196, 154, 74, 0.04) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+/* ────────────────────────────────────────────
+   ANIMATIONS
+──────────────────────────────────────────── */
+
+/* Gentle float — used on decorative elements */
+@keyframes float {
+  0%,  100% { transform: translateY(0px) rotate(0deg); }
+  50%        { transform: translateY(-8px) rotate(0.8deg); }
+}
+
+.floating-element {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Slow background orb drift */
+@keyframes driftA {
+  0%,  100% { transform: translate(0, 0) scale(1); }
+  50%        { transform: translate(20px, -15px) scale(1.06); }
+}
+
+@keyframes driftB {
+  0%,  100% { transform: translate(0, 0) scale(1); }
+  50%        { transform: translate(-15px, 20px) scale(1.08); }
+}
+
+/* Number tick pulse (countdown) */
+@keyframes tickPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Divider line draw-in */
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 100%; opacity: 1; }
+}
+
+/* Scroll-down bounce indicator */
+@keyframes scrollBounce {
+  0%,  100% { transform: translateY(0); opacity: 0.6; }
+  50%        { transform: translateY(6px); opacity: 1; }
+}
+
+.scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ────────────────────────────────────────────
+   LAVENDER BACKGROUND ORBS
+──────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+}
+
+.orb-lavender-lg {
+  width: 360px;
+  height: 360px;
+  background: rgba(232, 224, 240, 0.55);
+  animation: driftA 14s ease-in-out infinite;
+}
+
+.orb-gold-md {
+  width: 280px;
+  height: 280px;
+  background: rgba(196, 154, 74, 0.10);
+  animation: driftB 18s ease-in-out infinite;
+}
+
+.orb-lavender-sm {
+  width: 200px;
+  height: 200px;
+  background: rgba(232, 224, 240, 0.32);
+  animation: driftA 22s ease-in-out infinite reverse;
+}
+
+/* ────────────────────────────────────────────
+   ORNAMENT DIVIDER
+──────────────────────────────────────────── */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ornament-line .line {
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: var(--color-gold);
+  opacity: 0.5;
+}
+
+.ornament-diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+/* ────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+──────────────────────────────────────────── */
+.font-serif   { font-family: var(--font-serif); }
+.font-cursive { font-family: var(--font-cursive); }
+.font-cinzel  { font-family: var(--font-cinzel); }
+.font-sans    { font-family: var(--font-sans); }
+
+/* Section label (e.g. "The Countdown") */
+.section-label {
+  font-family: var(--font-cinzel);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--color-taupe);
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ────────────────────────────────────────────
+   BUTTON UTILITIES
+──────────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--color-kraft);
+  color: var(--color-cream);
+  font-family: var(--font-cinzel);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-bronze);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-espresso);
+  font-family: var(--font-cinzel);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-gold);
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-bronze);
+  color: var(--color-bronze);
+  transform: translateY(-1px);
+}
+
+/* ────────────────────────────────────────────
+   DETAIL CARD (Wedding Details section)
+──────────────────────────────────────────── */
+.detail-card {
+  background: var(--color-ivory);
+  border: 1px solid var(--color-beige);
+  border-radius: 16px;
+  border-top: 3px solid var(--color-gold);
+  box-shadow: 0 4px 24px rgba(160, 128, 96, 0.07);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-kraft);
+  box-shadow: 0 12px 40px rgba(181, 129, 58, 0.14);
+}
+
+/* ────────────────────────────────────────────
+   SCROLLBAR
+──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-beige);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-taupe);
+}

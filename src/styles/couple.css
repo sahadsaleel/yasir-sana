@@ -1,0 +1,139 @@
+/* Groom & Bride Section Styles */
+.couple-section {
+  width: 100%;
+  padding: 100px 24px;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-ivory) 100%);
+  min-height: 80vh;
+}
+
+.couple-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.couple-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: var(--color-espresso);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.couple-subheading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: var(--color-gold);
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.couple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .couple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+  }
+}
+
+.couple-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portrait-frame {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3/4;
+  background: var(--color-cream);
+  border: 3px solid var(--color-gold);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 16px 48px rgba(61, 38, 16, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(196, 154, 74, 0.1), rgba(181, 129, 58, 0.08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 64px;
+  color: rgba(196, 154, 74, 0.3);
+}
+
+.portrait-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-espresso);
+  margin-bottom: 8px;
+}
+
+.portrait-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.portrait-bio {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-bronze);
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.botanical-ornament {
+  width: 80px;
+  height: 36px;
+  margin: 32px auto;
+  opacity: 0.7;
+}
+
+.couple-story {
+  background: var(--color-cream);
+  padding: 48px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 154, 74, 0.25);
+  text-align: center;
+}
+
+.story-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--color-espresso);
+  margin-bottom: 24px;
+}
+
+.story-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-bronze);
+  line-height: 1.9;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.story-text em {
+  color: var(--color-gold);
+  font-style: italic;
+}

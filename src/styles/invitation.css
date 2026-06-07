@@ -1,0 +1,82 @@
+/* Invitation Section Styles */
+.invitation-section {
+  width: 100%;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-ivory) 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invitation-inner {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.invitation-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: var(--color-espresso);
+  margin-bottom: 24px;
+}
+
+.invitation-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--color-bronze);
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.invitation-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-invitation {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-invitation-primary {
+  background: var(--color-kraft);
+  color: var(--color-cream);
+}
+
+.btn-invitation-primary:hover {
+  background: var(--color-bronze);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 94, 42, 0.25);
+}
+
+.btn-invitation-outline {
+  background: transparent;
+  color: var(--color-espresso);
+  border: 1.5px solid var(--color-gold);
+}
+
+.btn-invitation-outline:hover {
+  background: var(--color-gold);
+  color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+.invitation-note {
+  margin-top: 48px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--color-taupe);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}

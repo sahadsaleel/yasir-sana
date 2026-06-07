@@ -67,6 +67,9 @@
   font-weight: 400;
   color: var(--color-gold);
   margin: 0 4px;
+  display: inline;
+  /* explicitly reset to inline */
+  line-height: 1;
 }
 
 .nav-sub {

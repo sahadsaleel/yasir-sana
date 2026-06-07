@@ -180,7 +180,9 @@ export default function HeroSection() {
             animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           >
-            Yasir Shan <span className="amp">&amp;</span> Sana Nasrin
+            <span className="name-line">Yasir Shan</span>
+            <span className="amp">&amp;</span>
+            <span className="name-line">Sana Nasrin</span>
           </motion.h1>
 
           {/* Tagline */}

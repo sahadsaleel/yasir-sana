@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '#hero' },
     { name: 'Countdown', href: '#countdown' },
     { name: 'Details', href: '#details' },
     { name: 'Couple', href: '#couple-section' },
@@ -253,7 +253,7 @@ export default function Navbar() {
         <div className="nav-inner">
 
           {/* Monogram logo */}
-          <a href="#home" className="nav-logo">
+          <a href="#hero" className="nav-logo">
             <span className="nav-monogram">
               Y <span className="amp">&amp;</span> S
             </span>
